@@ -13,7 +13,7 @@ const SearchBarComponent = ({ search, setSearch, placeholder, loading }: searchB
     setSearch(search)
   }
   return (
-    <View style={{ marginHorizontal: 10 }}>
+    <View style={{ marginHorizontal: 10, marginTop: 10 }}>
       <SearchBar
         placeholder={placeholder}
         onChangeText={updateSearch}

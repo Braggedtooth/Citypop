@@ -1,28 +1,32 @@
 import { StyleSheet, View } from 'react-native'
-import { Text } from '@rneui/themed'
+import { Text, useTheme } from '@rneui/themed'
 import React from 'react'
 
 type LogoTextProps = {
   text: string
 }
 const LogoText = ({ text }: LogoTextProps) => {
+  const { theme } = useTheme()
   return (
-    <View style={styles.container}>
-      <Text style={styles.text}>{text}</Text>
+    <View
+      style={{
+        marginVertical: 30,
+        padding: 50
+      }}
+    >
+      <Text
+        style={{
+          textAlign: 'center',
+          fontSize: 50,
+          color: theme.colors.secondary,
+          fontFamily: 'LibreBarcode39Text_400Regular'
+        }}
+      >
+        {text}
+      </Text>
     </View>
   )
 }
 
 export default LogoText
 
-const styles = StyleSheet.create({
-  container: {
-    marginVertical: 30,
-    padding: 50
-  },
-  text: {
-    textAlign: 'center',
-    fontSize: 50,
-    fontFamily: 'LibreBarcode39Text_400Regular'
-  }
-})

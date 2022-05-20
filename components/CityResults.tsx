@@ -3,7 +3,10 @@ import { Text, Card, useTheme } from '@rneui/themed'
 import { CityResponse } from '../types/Response'
 
 type CityResultsProps = {
-  results: CityResponse
+  results: {
+    name: string
+    population: number
+  }
 }
 const CityResults = ({ results }: CityResultsProps) => {
   const { theme } = useTheme()

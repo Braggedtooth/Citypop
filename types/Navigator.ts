@@ -3,7 +3,7 @@ import { CompositeNavigationProp } from '@react-navigation/native'
 import { NativeStackNavigationProp, NativeStackScreenProps } from '@react-navigation/native-stack'
 export type RootNavigation = {
   CityPop: undefined
-  Details: { query: string }
+  Details: { name: string; population: number }
 }
 export type BottomNavigation = {
   Country: undefined
@@ -18,5 +18,6 @@ export type homeScreenProps = CompositeNavigationProp<
 export type countryScreenProps = BottomTabNavigationProp<BottomNavigation, 'Country'>
 
 export type cityScreenProps = {
-  querry: string
+  name: string
+  population: number
 } & NativeStackScreenProps<RootNavigation, 'Details'>

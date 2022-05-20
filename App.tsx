@@ -1,3 +1,4 @@
+// @ts-nocheck
 import { createNativeStackNavigator } from '@react-navigation/native-stack'
 import { NavigationContainer } from '@react-navigation/native'
 import { ThemeProvider } from '@rneui/themed'
@@ -11,6 +12,7 @@ import City from './views/City'
 import { Entypo } from '@expo/vector-icons'
 import { useState, useEffect, useCallback } from 'react'
 import { useFonts, LibreBarcode39Text_400Regular } from '@expo-google-fonts/libre-barcode-39-text'
+import { View } from 'react-native'
 
 const queryClient = new QueryClient()
 
@@ -57,16 +59,27 @@ export default function App() {
     <NavigationContainer>
       <QueryClientProvider client={queryClient}>
         <ThemeProvider>
-          <Stack.Navigator
-            screenOptions={{
-              headerStyle: { backgroundColor: `${theme.colors.secondary}` },
-              headerTintColor: '#fff',
-              headerTitleStyle: { fontWeight: 'bold' }
+          <View
+            style={{
+              flex: 1,
+              justifyContent: 'center',
+              alignContent: 'center',
+              height: '100%',
+              backgroundColor: theme.colors.grey2
             }}
+            onLayout={onLayoutRootView}
           >
-            <Stack.Screen name="CityPop" component={Screens} />
-            <Stack.Screen name="Details" component={City} />
-          </Stack.Navigator>
+            <Stack.Navigator
+              screenOptions={{
+                headerStyle: { backgroundColor: `${theme.colors.secondary}` },
+                headerTintColor: '#fff',
+                headerTitleStyle: { fontWeight: 'bold' }
+              }}
+            >
+              <Stack.Screen name="CityPop" component={Screens} />
+              <Stack.Screen name="Details" component={City} />
+            </Stack.Navigator>
+          </View>
         </ThemeProvider>
       </QueryClientProvider>
     </NavigationContainer>

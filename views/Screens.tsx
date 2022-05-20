@@ -15,7 +15,9 @@ const Screens = () => {
       initialRouteName="Home"
       sceneContainerStyle={{
         flex: 1,
-        backgroundColor: `${theme.colors.grey2}`,
+        width: '100%',
+        maxWidth: 1080,
+        alignSelf: 'center',
         justifyContent: 'center'
       }}
     >

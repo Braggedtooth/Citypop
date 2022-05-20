@@ -2,7 +2,7 @@ import { BottomTabNavigationProp } from '@react-navigation/bottom-tabs'
 import { CompositeNavigationProp } from '@react-navigation/native'
 import { NativeStackNavigationProp, NativeStackScreenProps } from '@react-navigation/native-stack'
 export type RootNavigation = {
-  Home: undefined
+  CityPop: undefined
   Details: { query: string }
 }
 export type BottomNavigation = {

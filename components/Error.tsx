@@ -1,7 +1,11 @@
 import { View } from 'react-native'
 import React from 'react'
 import { Text, useTheme } from '@rneui/themed'
-const Error = () => {
+type errorProps = {
+  empty?: boolean
+  value?: string
+}
+const Error = ({ empty, value }: errorProps) => {
   const { theme } = useTheme()
   return (
     <View
@@ -15,9 +19,15 @@ const Error = () => {
         borderRadius: 5
       }}
     >
-      <Text style={{ color: theme.colors.error, textAlign: 'center' }}>
-        Woooah! Didnt expect that? Welp it happened.. This is an error
-      </Text>
+      {empty ? (
+        <Text style={{ color: theme.colors.warning, textAlign: 'center' }}>
+          Woah there! We couldnt find {value} check for typos and try again{' '}
+        </Text>
+      ) : (
+        <Text style={{ color: theme.colors.error, textAlign: 'center' }}>
+          Woooah! Didnt expect that? Welp it happened.. This is an error
+        </Text>
+      )}
     </View>
   )
 }

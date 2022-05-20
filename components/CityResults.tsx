@@ -7,6 +7,7 @@ type CityResultsProps = {
 }
 const CityResults = ({ results }: CityResultsProps) => {
   const { theme } = useTheme()
+  
   return (
     <Card containerStyle={{ borderRadius: 10, backgroundColor: theme.colors.searchBg }}>
       <Card.Title style={{ fontSize: 20 }}> Welcome to {results.name}</Card.Title>
@@ -19,7 +20,13 @@ const CityResults = ({ results }: CityResultsProps) => {
           borderRadius: 5
         }}
       >
-        <Text style={{ fontSize: 40, color: theme.colors.success, fontFamily: 'Baskerville', fontWeight: 'bold' }}>
+        <Text
+          style={{
+            fontSize: 40,
+            color: theme.colors.success,
+            fontWeight: 'bold'
+          }}
+        >
           {results.population.toLocaleString()}
         </Text>
       </View>

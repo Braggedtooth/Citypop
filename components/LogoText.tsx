@@ -22,6 +22,7 @@ const styles = StyleSheet.create({
   },
   text: {
     textAlign: 'center',
-    fontSize: 50
+    fontSize: 50,
+    fontFamily: 'LibreBarcode39Text_400Regular'
   }
 })

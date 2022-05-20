@@ -10,7 +10,7 @@ import * as Font from 'expo-font'
 import City from './views/City'
 import { Entypo } from '@expo/vector-icons'
 import { useState, useEffect, useCallback } from 'react'
-import { View } from 'react-native'
+import { useFonts, LibreBarcode39Text_400Regular } from '@expo-google-fonts/libre-barcode-39-text'
 
 const queryClient = new QueryClient()
 
@@ -18,7 +18,9 @@ const Stack = createNativeStackNavigator<RootNavigation>()
 export default function App() {
   const { theme } = useTheme()
   const [appIsReady, setAppIsReady] = useState(false)
-
+  let [fontsLoaded] = useFonts({
+    LibreBarcode39Text_400Regular
+  })
   useEffect(() => {
     async function prepare() {
       try {
@@ -26,19 +28,17 @@ export default function App() {
         await SplashScreen.preventAutoHideAsync()
         // Pre-load fonts, make any API calls you need to do here
         await Font.loadAsync(Entypo.font)
-        // Artificially delay for two seconds to simulate a slow loading
-        // experience. Please remove this if you copy and paste the code!
-        await new Promise((resolve) => setTimeout(resolve, 2000))
       } catch (e) {
         console.warn(e)
       } finally {
         // Tell the application to render
+        await SplashScreen.hideAsync()
         setAppIsReady(true)
       }
     }
 
     prepare()
-  }, [])
+  }, [fontsLoaded])
   const onLayoutRootView = useCallback(async () => {
     if (appIsReady) {
       // This tells the splash screen to hide immediately! If we call this after

@@ -1072,10 +1072,10 @@
     minimatch "^3.1.2"
     strip-json-comments "^3.1.1"
 
-"@expo-google-fonts/inter@^0.2.2":
+"@expo-google-fonts/libre-barcode-39-text@^0.2.2":
   version "0.2.2"
-  resolved "https://registry.yarnpkg.com/@expo-google-fonts/inter/-/inter-0.2.2.tgz#bd5624be6c92e7621aa9ddb5bd72757604729121"
-  integrity sha512-dU6mSczI2xkRZbUhQQ5VB+D4AqLOF8ufCIfA1iBjrPZ/Qnka88E5Ez2Mvm41exdKR76norVvYD5GJIQYEEoO/Q==
+  resolved "https://registry.yarnpkg.com/@expo-google-fonts/libre-barcode-39-text/-/libre-barcode-39-text-0.2.2.tgz#51afd9527f785fa351ee7237c2e442d569bba7c3"
+  integrity sha512-wR4hTxhnN4qjVY32c91N9jecUiQP1FJp378fVgqMj4d+cWpKd3FOY33CYHaLytkEhdBuzIdRdUUd1RkVFyQAGQ==
 
 "@expo/bunyan@4.0.0", "@expo/bunyan@^4.0.0":
   version "4.0.0"
@@ -3530,11 +3530,6 @@ expo-splash-screen@~0.15.1:
   dependencies:
     "@expo/configure-splash-screen" "^0.6.0"
     "@expo/prebuild-config" "~4.0.0"
-
-expo-status-bar@~1.3.0:
-  version "1.3.0"
-  resolved "https://registry.yarnpkg.com/expo-status-bar/-/expo-status-bar-1.3.0.tgz#d71fd0b880ea201905f5dd8abcd18db7476c9f03"
-  integrity sha512-UszYUsT8A8jSUebrXht095Iwv5VIdg61LPuyNNoC5gFP0E9G+8LgX68deqR4zhJOlbsgSH2cixxKhrGW+1HPZg==
 
 expo@~45.0.0:
   version "45.0.4"

@@ -2,6 +2,7 @@ import { Button, View } from 'react-native'
 import { Text } from '@rneui/themed'
 import React, { useEffect, useState } from 'react'
 import { cityScreenProps } from '../types/Navigator'
+import CityResults from '../components/CityResults'
 
 const City = ({ navigation, route }: cityScreenProps) => {
   const [first, setfirst] = useState(false)
@@ -10,17 +11,16 @@ const City = ({ navigation, route }: cityScreenProps) => {
     return () => {
       setfirst(false)
     }
-  }, [route.params.query])
+  }, [route.params])
 
   return (
-    <View>
-      <Text>City</Text>
-      {first && (
-        <Text style={{ fontSize: 24, color: 'red', textAlign: 'center' }}>
-          {route.params.query}
-        </Text>
-      )}
-      <Button title="Go back" onPress={() => navigation.navigate('Home')} />
+    <View
+      style={{
+        flexDirection: 'column',
+        marginVertical: 100
+      }}
+    >
+      {first && <CityResults results={{ name: route.params.name, population: route.params.population }} />}
     </View>
   )
 }

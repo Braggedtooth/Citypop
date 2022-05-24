@@ -4,10 +4,8 @@ import { CountryResponse } from '../types/Response'
 import { Text, useTheme } from '@rneui/themed'
 import { useNavigation } from '@react-navigation/native'
 import { homeScreenProps } from '../types/Navigator'
+import { CountryResultsProps } from '../types/Components'
 
-type CountryResultsProps = {
-  results: CountryResponse
-}
 const CountryResults = ({ results }: CountryResultsProps) => {
   const { theme } = useTheme()
   const navigation = useNavigation<homeScreenProps>()

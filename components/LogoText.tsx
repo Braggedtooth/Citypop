@@ -29,4 +29,3 @@ const LogoText = ({ text }: LogoTextProps) => {
 }
 
 export default LogoText
-

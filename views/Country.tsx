@@ -27,7 +27,12 @@ const Country = ({}: countryScreenProps) => {
         {data &&
           data.map((country) => {
             if (country.adminName1) {
-              return <CountryResults results={country} key={country.geonameId} />
+              return (
+                <CountryResults
+                  results={{ countryName: country.countryName, name: country.name, population: country.population }}
+                  key={country.geonameId}
+                />
+              )
             }
           })}
       </View>

@@ -1,0 +1,29 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Test City Results Renders Correctly 1`] = `
+<View
+  style={
+    Object {
+      "width": "100%",
+    }
+  }
+>
+  <Text
+    accessibilityRole="text"
+    onPress={[Function]}
+    style={
+      Object {
+        "backgroundColor": "#242424",
+        "borderRadius": 5,
+        "color": "#ffffff",
+        "marginHorizontal": 50,
+        "marginVertical": 5,
+        "padding": 15,
+      }
+    }
+    testID="countryInfo"
+  >
+    Test Country, Holland
+  </Text>
+</View>
+`;

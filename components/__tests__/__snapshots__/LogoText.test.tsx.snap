@@ -1,0 +1,26 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Test City Results Renders Correctly 1`] = `
+<View
+  style={
+    Object {
+      "marginVertical": 30,
+      "padding": 50,
+    }
+  }
+>
+  <Text
+    accessibilityRole="text"
+    style={
+      Object {
+        "color": "#03dac4",
+        "fontFamily": "LibreBarcode39Text_400Regular",
+        "fontSize": 50,
+        "textAlign": "center",
+      }
+    }
+  >
+    City Pop
+  </Text>
+</View>
+`;

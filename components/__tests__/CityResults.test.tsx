@@ -10,20 +10,18 @@ describe('Test City Results', () => {
       population: 3000
     }
   })
-  const renderCityResults = () => render(<CityResults results={props} />)
+  const renderResult = () => render(<CityResults results={props} />)
   it('Renders Correctly', () => {
-    const component = renderCityResults().toJSON()
+    const component = renderResult().toJSON()
     expect(component).toMatchSnapshot()
   })
   it('Should render given name', () => {
-    props.name = 'Test City'
-    const { getByTestId, toJSON } = renderCityResults()
+    const { getByTestId } = renderResult()
     const title = getByTestId('title')
     expect(title.props.children).toBe(`Welcome to ${props.name}`)
   })
   it('Should render population with locale string method', () => {
-    props.population = 3000
-    const { getByTestId } = renderCityResults()
+    const { getByTestId } = renderResult()
     const population = getByTestId('population')
     expect(population.props.children).toBe(props.population.toLocaleString())
   })

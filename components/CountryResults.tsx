@@ -5,16 +5,15 @@ import { Text, useTheme } from '@rneui/themed'
 import { useNavigation } from '@react-navigation/native'
 import { homeScreenProps } from '../types/Navigator'
 import { CountryResultsProps } from '../types/Components'
+import useNavigate from '../utils/useNavigate'
 
-const CountryResults = ({ results }: CountryResultsProps) => {
+const CountryResults = ({ results, details }: CountryResultsProps) => {
   const { theme } = useTheme()
-  const navigation = useNavigation<homeScreenProps>()
-  const go = () => {
-    navigation.navigate('Details', { name: results.name, population: results.population })
-  }
+
   return (
     <View style={{ width: '100%' }}>
       <Text
+        testID="countryInfo"
         style={{
           color: theme.colors.white,
           backgroundColor: theme.colors.black,
@@ -23,9 +22,9 @@ const CountryResults = ({ results }: CountryResultsProps) => {
           marginHorizontal: 50,
           borderRadius: 5
         }}
-        onPress={go}
+        onPress={() => details({ results })}
       >
-        {results.name}, {results.countryName}
+        {`${results.name}, ${results.countryName}`}
       </Text>
     </View>
   )

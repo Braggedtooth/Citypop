@@ -6,11 +6,13 @@ import useCountry from '../utils/useCountry'
 import useDebounce from '../utils/useDeboucedValue'
 import CountryResults from '../components/CountryResults'
 import Error from '../components/Error'
+import useNavigate from '../utils/useNavigate'
 
 const Country = ({}: countryScreenProps) => {
   const [search, setSearch] = useState('')
   const debouced = useDebounce(search, 1000)
   const { data, isError, isLoading } = useCountry(debouced)
+  const { goTodetails } = useNavigate()
 
   return (
     <ScrollView>
@@ -31,6 +33,7 @@ const Country = ({}: countryScreenProps) => {
                 <CountryResults
                   results={{ countryName: country.countryName, name: country.name, population: country.population }}
                   key={country.geonameId}
+                  details={goTodetails}
                 />
               )
             }

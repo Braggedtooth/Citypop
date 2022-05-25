@@ -19,15 +19,11 @@ const Error = ({ empty, value }: errorProps) => {
         borderRadius: 5
       }}
     >
-      {empty ? (
-        <Text style={{ color: theme.colors.warning, textAlign: 'center' }}>
-          Woah there! We couldnt find {value} check for typos and try again{' '}
-        </Text>
-      ) : (
-        <Text style={{ color: theme.colors.error, textAlign: 'center' }}>
-          Woooah! Didnt expect that? Welp it happened.. This is an error
-        </Text>
-      )}
+      <Text testID="error" style={{ color: !empty ? theme.colors.warning : theme.colors.error, textAlign: 'center' }}>
+        {!empty
+          ? `Woah there! We couldnt find ${value} check for typos and try again`
+          : `Woooah! Didnt expect that? Welp it happened.. This is an error`}
+      </Text>
     </View>
   )
 }

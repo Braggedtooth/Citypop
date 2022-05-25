@@ -10,7 +10,7 @@ import * as SplashScreen from 'expo-splash-screen'
 import * as Font from 'expo-font'
 import City from './views/City'
 import { Entypo } from '@expo/vector-icons'
-import { useState, useEffect, useCallback } from 'react'
+import React, { useState, useEffect, useCallback } from 'react'
 import { useFonts, LibreBarcode39Text_400Regular } from '@expo-google-fonts/libre-barcode-39-text'
 import { View } from 'react-native'
 

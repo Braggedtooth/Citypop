@@ -1,19 +1,17 @@
+import React from 'react'
 import { View } from 'react-native'
 import { Text, Card, useTheme } from '@rneui/themed'
 import { CityResponse } from '../types/Response'
+import { CityResultsProps } from '../types/Components'
 
-type CityResultsProps = {
-  results: {
-    name: string
-    population: number
-  }
-}
 const CityResults = ({ results }: CityResultsProps) => {
   const { theme } = useTheme()
-  
+
   return (
     <Card containerStyle={{ borderRadius: 10, backgroundColor: theme.colors.searchBg }}>
-      <Card.Title style={{ fontSize: 20 }}> Welcome to {results.name}</Card.Title>
+      <Card.Title style={{ fontSize: 20 }} testID="title">
+        {`Welcome to ${results.name}`}
+      </Card.Title>
       <View
         style={{
           alignItems: 'center',
@@ -24,6 +22,7 @@ const CityResults = ({ results }: CityResultsProps) => {
         }}
       >
         <Text
+          testID="population"
           style={{
             fontSize: 40,
             color: theme.colors.success,

@@ -11,24 +11,8 @@
     "web": "expo start --web",
     "eject": "expo eject"
   },
-  "jest": {
-    "preset": "jest-expo",
-    "moduleFileExtensions": [
-      "ts",
-      "tsx",
-      "js"
-    ],
-    "transform": {
-      "\\.(ts|tsx)$": "ts-jest"
-    },
-    "testRegex": "(/__tests__/.*|\\.(test|spec))\\.(ts|tsx|js)$",
-    "testPathIgnorePatterns": [
-      "\\.snap$",
-      "node_modules/"
-    ],
-    "cacheDirectory": ".jest/cache"
-  },
   "dependencies": {
+    "@babel/register": "^7.17.7",
     "@expo-google-fonts/libre-barcode-39-text": "^0.2.2",
     "@react-navigation/bottom-tabs": "^6.3.1",
     "@react-navigation/native": "^6.0.10",
@@ -39,6 +23,7 @@
     "expo": "~45.0.0",
     "expo-font": "~10.1.0",
     "expo-splash-screen": "~0.15.1",
+    "metro-babel-register": "^0.71.0",
     "react": "17.0.2",
     "react-dom": "17.0.2",
     "react-native": "0.68.2",

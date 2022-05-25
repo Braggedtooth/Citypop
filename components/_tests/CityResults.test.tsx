@@ -25,6 +25,6 @@ describe('Test City Results', () => {
     props.population = 3000
     const { getByTestId } = renderCityResults()
     const population = getByTestId('population')
-    expect(population.props.children).toBe(props.name.toLocaleString())
+    expect(population.props.children).toBe(props.population.toLocaleString())
   })
 })

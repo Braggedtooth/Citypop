@@ -10,7 +10,7 @@ const CityResults = ({ results }: CityResultsProps) => {
   return (
     <Card containerStyle={{ borderRadius: 10, backgroundColor: theme.colors.searchBg }}>
       <Card.Title style={{ fontSize: 20 }} testID="title">
-        Welcome to {results.name}
+        {`Welcome to ${results.name}`}
       </Card.Title>
       <View
         style={{

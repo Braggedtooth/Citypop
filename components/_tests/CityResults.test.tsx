@@ -19,7 +19,12 @@ describe('Test City Results', () => {
     props.name = 'Test City'
     const { getByTestId, toJSON } = renderCityResults()
     const title = getByTestId('title')
-    expect(title.props.children).toBe(`Welcome to${props.name}`)
-    expect(toJSON()).toMatchSnapshot()
+    expect(title.props.children).toBe(`Welcome to ${props.name}`)
+  })
+  it('Should render population with locale string method', () => {
+    props.population = 3000
+    const { getByTestId } = renderCityResults()
+    const population = getByTestId('population')
+    expect(population.props.children).toBe(props.name.toLocaleString())
   })
 })

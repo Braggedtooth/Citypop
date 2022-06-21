@@ -1,9 +1,9 @@
 import { useNavigation } from '@react-navigation/native'
 import { CountryResultsProps } from '../types/Components'
-import { homeScreenProps } from '../types/Navigator'
+import { HomeScreenProps } from '../types/Navigator'
 
 const useNavigate = () => {
-  const navigation = useNavigation<homeScreenProps>()
+  const navigation = useNavigation<HomeScreenProps>()
   const goTodetails = ({ results }: CountryResultsProps) => {
     return navigation.navigate('Details', { name: results.name, population: results.population })
   }

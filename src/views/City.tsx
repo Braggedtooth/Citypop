@@ -1,5 +1,4 @@
-import { Button, View } from 'react-native'
-import { Text } from '@rneui/themed'
+import { View } from 'react-native'
 import React, { useEffect, useState } from 'react'
 import { cityScreenProps } from '../types/Navigator'
 import CityResults from '../components/CityResults'

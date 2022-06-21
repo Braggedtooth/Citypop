@@ -10,7 +10,7 @@ export type BottomNavigation = {
   Home: undefined
 }
 
-export type homeScreenProps = CompositeNavigationProp<
+export type HomeScreenProps = CompositeNavigationProp<
   NativeStackNavigationProp<RootNavigation>,
   BottomTabNavigationProp<BottomNavigation>
 >

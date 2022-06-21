@@ -11,6 +11,7 @@ const BottomTab = createBottomTabNavigator<BottomNavigation>()
 const Screens = () => {
   const { theme } = useTheme()
   return (
+    <>
     <BottomTab.Navigator
       initialRouteName="Home"
       sceneContainerStyle={{
@@ -42,6 +43,7 @@ const Screens = () => {
         }}
       />
     </BottomTab.Navigator>
+    </>
   )
 }
 

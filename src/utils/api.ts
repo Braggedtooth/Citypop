@@ -6,7 +6,8 @@ const CITYAPIURL = 'https://api.api-ninjas.com/v1'
 if (!APIKEY) {
   console.error('APIKEY value is not set in env file')
 }
-
+/* Creating an instance of axios with a baseURL of COUNTRYAPIURL, params of username,
+maxRows, and orderby, and headers of Accept and Content-Type. */
 export const countryApi = axios.create({
   baseURL: COUNTRYAPIURL,
   params: {
@@ -20,6 +21,8 @@ export const countryApi = axios.create({
   }
 })
 
+/* Creating an instance of axios with a baseURL of CITYAPIURL, headers of Accept and Content-Type, and
+an X-Api-Key header of APIKEY. */
 export const cityApi = axios.create({
   baseURL: CITYAPIURL,
   headers: {
